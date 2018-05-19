@@ -8,19 +8,20 @@ module.exports = function (ctx, cb) {
     // check for the first call, if data is present
     data = data || {count: 0}
 
-    // if I want to read only the value
-    if (ctx.query.get) {
+    var val = parseInt(ctx.query.dir)
+
+    // increment or decrement the counter
+    if (val && !isNaN(val)) {
+      data.count = data.count + val
+
+        // save the data
+      ctx.storage.set(data, {force: 1}, function (error) {
+        if (error) return cb(error)
+        cb(null, {status: 200, data: data})
+      })
+    } else {
+      // return the current stored data
       cb(null, {status: 200, data: data})
-      return
     }
-
-    // increment the counter
-    data.count++
-
-    // save the data
-    ctx.storage.set(data, {force: 1}, function (error) {
-      if (error) return cb(error)
-      cb(null, {status: 200, data: data})
-    })
   })
 }
