@@ -1,0 +1,11 @@
+{
+  "name": "webtask-little-example",
+  "version": "1.0.0",
+  "description": "A little example about how to use Webtask.io creatively",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Franchino Fabio",
+  "license": "ISC"
+}
