@@ -23,4 +23,4 @@ Increment or decrement the counter:
 
 where `v` is a number
 
-Few words about it [https://fabiofranchino.com/blog/webtask-little-example](here)
+Few words about it [here](https://fabiofranchino.com/blog/webtask-little-example).
